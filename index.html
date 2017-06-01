@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Boostrap</title>
+  <!--   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+  <!--
+      La clase "container" es la que contiene las distintas filas, esta clase centra el contenido con un ancho fijo:
+        Este contenedor empiesa a tomar tamaños a partir de 544px en adelante.
+        Dispositivos y su visualización:
+
+          -"XS" 100% de su ancho (Celulares pequeños).
+          -"SM" 100% de su ancho (Celulares más grandes).
+          -"MD" 720px de ancho (Tablet).
+          -"LG" 940px de ancho (Notebook).
+          -"XL" 1140px de ancho (Pantallas mas grandes).
+
+      La clase "container-fluid" no aplica anchos fijos, si no al 100%.
+        Pero no olvidar que el container agrega un padding a la derecha y la izquierda.En todos los dispositivos.
+
+        @include media-breakpoint-up(xs) { ... }
+        @include media-breakpoint-up(sm) { ... }
+        @include media-breakpoint-up(md) { ... }
+        @include media-breakpoint-up(lg) { ... }
+        @include media-breakpoint-up(xl) { ... }
+
+        // Example usage:
+        @include media-breakpoint-up(sm) {
+        .some-class {
+          display: block;
+        }
+      }
+
+      sm: 576px,
+      md: 720px,
+      lg: 940px,
+      xl: 1140px
+
+  -->
+  <div class="container">
+    <h1>Offset</h1>
+    <hr>
+  </div>
+  <!--Aplicamos la clase container a un div-->
+  <div class="container contenedor">
+    <!-- Creamos la fila con la clase row, dentro de esta podemos crear las 12 columnas que necesitemos -->
+    <div class="row columna">
+
+                    <!-- Los "LG" se activan a los 992px en adelante o sea cuando se visualice en un tablet o dispositivo movil
+                         Estas columnas se visualizaran al máximo de ancho.
+                         IMPORTANTE
+                         Las clases de Boostrap son solo para estructurar, no son para darle atributos estéticos
+                    -->
+                    <div class="col-lg-3 col-md-6 azul text-lg-center text-xs-right">
+                    <!-- bootrap 4 trae un sistema de alineación de texto para cada dispositivo:
+                         EJEMPLO:
+                         text-lg-center / en dispositivos más grandes el texto se centrará.
+                         text-xs-right / en dispositivos más grandes el texto de alineará a la derecha.
+                    -->
+                      <h2>.col-lg-3</h2>
+                    </div>
+
+                    <div class="col-lg-3 offset-lg-1 col-md-6 naranja">
+                      <h2>.col-lg-3</h2>
+                    </div>
+
+                    <div class="col-lg-3 offset-lg-2 col-md-6 naranja">
+                      <h2>.col-lg-3</h2>
+                    </div>
+
+
+    </div>
+  </div>
+  <br><br>
+  <div class="container">
+    <h1>Sub nivel</h1>
+    <hr>
+  </div>
+
+  <div class="container contenedor">
+
+    <div class="row columna">
+
+
+                    <div class="col-lg-6 col-md-6 azul text-lg-center text-xs-right">
+                        <h2>.col-lg-6</h2>
+                      <div class="row">
+                          <div class="col-lg-7 verde">
+                            <h2>.col-lg-7</h2>
+                          </div>
+
+                          <div class="col-lg-5 morado">
+                            <h2>.col-lg-5</h2>
+                          </div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 naranja">
+                      <h2>.col-lg-3</h2>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 naranja">
+                      <h2>.col-lg-3</h2>
+                    </div>
+
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <h1>Herencia de las clases</h1>
+    <hr>
+  </div>
+
+  <div class="container-fluid contenedor">
+
+    <div class="row columna">
+
+                    <div class="col-md-6 col-md-6 naranja text-lg-center text-xs-center">
+                      <h2>.col-md-6</h2>
+                    </div>
+
+                    <div class="col-md-6 col-md-6 naranja">
+                      <h2>.col-md-6</h2>
+                    </div>
+
+
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <div class="container">
+    <h1>Clase hidden-xx-up,hidden-xx-down</h1>
+    <hr>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+        <div class="col-md-6 hidden-md-up azul">
+          <h4>Solo me mostraré en dispositivos con resolución MD < 768px</h4>
+        </div>
+
+        <div class="col-md-6 hidden-md-up azul">
+          <h4>Solo me mostraré en dispositivos con resolución MD < 768px</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 hidden-lg-up azul">
+          <h4>hidden-lg-up Sólo me mostraré en dispositivos con resolución menor a 992px</h4>
+        </div>
+
+        <div class="col-md-6 hidden-lg-up azul">
+          <h4>hidden-lg-up Sólo me mostraré en dispositivos con resolución menor a 992px</h4>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6 hidden-sm-down azul">
+          <h4>hidden-sm-down Me ocultaré al llegar a dispositivos móviles en el cual su resolución es menor > 768px</h4>
+        </div>
+
+        <div class="col-md-6 hidden-sm-down azul">
+          <h4>hidden-sm-down Me ocultaré al llegar a dispositivos móviles en el cual su resolución es menor > 768px</h4>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3 hidden-md-up verde">
+        Hola, me estoy mostrando en dispositivos moviles
+      </div>
+
+      <div class="col-sm-3 hidden-md-up verde">
+        Hola, me estoy mostrando en dispositivos moviles
+      </div>
+
+      <div class="col-sm-3 hidden-md-up verde">
+        Hola, me estoy mostrando en dispositivos moviles
+      </div>
+
+      <div class="col-sm-3 hidden-md-up verde">
+        Hola, me estoy mostrando en dispositivos moviles
+      </div>
+    </div>
+
+  </div>
+
+  <br><br>
+  <!--   //////// Estilos de Tipografias /////// -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 text-sm-center"><h1 class="display-1">Tipografía</h1><br><br><br></div>
+
+      <div class="col-md-12">
+      <h3>Cabeceras</h3>
+
+      <div class="col-md-12">
+        <h1>h1. Bootstrap heading</h1>
+        <h2>h1. Bootstrap heading</h2>
+        <h3>h1. Bootstrap heading</h3>
+        <h4>h1. Bootstrap heading</h4>
+        <h5>h1. Bootstrap heading</h5>
+        <h6>h1. Bootstrap heading</h6>
+        <hr>
+        <h3>Personalización de headers</h3>
+        <h3>
+          Fancy display heading
+          <!-- small.text-muted{With faded secondary text} emmet-->
+          <small class="text-muted">With faded secondary text</small>
+        </h3>
+        <h3>Headers Estilos más Grandes</h3>
+          <!--
+          h1.display-${Display $}*4 emmet Nuevas clases incorporadas en Bootstrap para dar mayor jerarquía a los headers.
+          Van del Display 1 hasta el 4
+          -->
+          <h1 class="display-1">Display 1</h1>
+          <h1 class="display-2">Display 2</h1>
+          <h1 class="display-3">Display 3</h1>
+          <h1 class="display-4">Display 4</h1>
+          <hr>
+
+          <h3>Parrafo destacado</h3>
+          <!--
+           emmet
+           p.lead{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.}
+           La clase lead asigna una tipogría de mayor Tamaño.
+           -->
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          <hr>
+
+          <h3>Elementos de Texto en Linea</h3>
+          <p>Etiqueta "mark" Se puede utilizar la etiqueta Mark <mark>Importante</mark> es para destacar algo es como subrayarlo</p>
+          <p>Etiqueta "del" La etiqueta del se utiliza para marcar secciones de un texto que han sido borradas....de acuerdo a la ley <del>17481</del> 17487 del Código Penal</p>
+          <p>La etiqueta "s"se usa para representar un texto con un estilo de fuente tachado. Ejemplo <s>Estilo de fuente tachado</s></p>
+          <p>La etiqueta "ins" se utiliza para marcar secciones de un texto que han sido insertadas.Ejemplo Codigo "...de acuerdo a la ley <del>17481</del> <ins>17487</ins> del Código Penal"</p>
+          <p>Etiqueta "u" Estilo de fuente normal - <u>Estilo de fuente subrayado</u></p>
+          <p>Etiqueta "small" Estilo de fuente normal <small>Estilo de fuente pequeña</small></p>
+          <p>Etiqueta "strong" Utilice <strong>HTML</strong> para diseñar sus páginas Web.</p>
+          <p>La etiqueta "em" se usa para indicar énfasis. Los navegadores presentan el texto enfatizado generalmente en itálica. Ejemplo: Utilice <em>HTML</em> para diseñar sus páginas Web.</p>
+
+          <h3>Abreviaturas</h3>
+          <p>La etiqueta "abbr" permite indicar abreviaturas tales como:www,html,etc. Puede utilizarce el atributo title para detallar la forma expandida de la expresión. Ejemplo <abbr title="Hipetext Transfer Protocol" class="initialism">HTTP</abbr></p>
+          <p><abbr title="Hipetext Transfer Protocol" class="initialism">HTTP</abbr></p>
+      </div>
+
+      <div class="col-md-12 text-sm-center"><h1 class="display-1">Estilos Códigos</h1><br><br><br></div>
+
+      <h3>Código en Linea</h3>
+      For example, <code>&lt;section&gt;</code>should be wrapped as inline.
+      <hr>
+
+      <h3>Preformateo del Texto</h3>
+      <pre>&lt;p&gt; Sample text here...&lt;/p&gt;</pre>
+      <hr>
+
+      <h3>Tipos Variables</h3>
+      <var>y</var> = <var>m</var><var>x</var>+<var>b</var>
+      <hr>
+
+      <h3>Entrada del Usuario o combinaciones de teclas</h3>
+      To swhith directories, types <kbd>cd</kbd> followed by name of the directory. <br>
+      To edit setting, press <kbd><kbd>ctrl</kbd> + <kbd>r</kbd></kbd>
+      <hr>
+
+      <h3>Resultado Output</h3>
+      <samp>This text is meat to be treated as sample output from a computer program </samp>
+
+
+
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <br><br>
+  <!--   //////// Imagenes Responsivas /////// -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-sm-center"><h1 class="display-1">Imágenes</h1></div>
+      <div class="col-md-12">
+
+        <hr>
+        <h1>Imagenes Responsivas</h1>
+        <hr>
+
+        <hr>
+        <img src="img/fashion-q-c-1500-750-10.jpg" class="img-fluid" alt="Responsive Image">
+        <hr>
+
+        <hr>
+        <h1>Formas de Imagen</h1>
+        <hr>
+        <img src="img/cats-q-c-300-300-4.jpg" alt="Image Rounded" class="img-rounded">
+        <img src="img/fashion-q-c-300-300-8.jpg" alt="Image Circle" class="img-circle">
+        <img src="img/nature-q-c-300-300-7.jpg" alt="Image Thumbnails" class="img-thumbnail">
+
+        <hr>
+        <h1>Alinear Imágenes</h1>
+        <hr>
+        <img src="img/cats-q-c-300-300-4.jpg" alt="Image Rounded" class="img-rounded pull-lg-left">
+        <img src="img/nature-q-c-300-300-7.jpg" alt="Image Rounded" class="img-rounded pull-lg-right">
+        <div class="clearfix"></div>
+        <hr>
+        <h1>Alinear Imágenes Centrar</h1>
+        <hr>
+        <img src="img/cats-q-c-300-300-4.jpg" alt="Image Rounded" class="img-rounded m-x-auto d-block">
+
+        <hr>
+        <h1>Figure caption</h1>
+        <hr>
+        <figure class="figure">
+          <img src="img/cats-q-c-300-300-4.jpg" class="figure-img img-fluid img-rounded" alt="">
+          <figcaption class="figure-caption">A caption for the above image.</figcaption>
+        </figure>
+
+        <figure class="figure pull-lg-right">
+          <img src="img/cats-q-c-300-300-4.jpg" class="figure-img img-fluid img-rounded" alt="">
+          <figcaption class="figure-caption text-xs-right">A caption for the above image.</figcaption>
+        </figure>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!--
+  IMPORTANTE / Documentación de Botones
+  http://v4-alpha.getbootstrap.com/components/buttons/
+  -->
+  <div class="container">
+    <div class="row">
+      <hr>
+      <div class="col-sm-12 text-sm-center"><h1 class="display-1">Buttons</h1></div>
+      <hr>
+      <h1>Primary, Secondary, Success, Info, Warning, Danger, link</h1>
+      <hr>
+      <div class="col-sm-12">
+        <!-- Bootstrap incluye seis estilos de botones predefinidos, cada uno sirviendo a sus propios fines semántica. -->
+        <!-- Proporciona peso visual adicional e identifica la acción principal de un conjunto de botones -->
+        <button type="button" class="btn btn-primary">Primary</button>
+
+        <!-- Botón secundario del contorno -->
+        <button type="button" class="btn btn-secondary">Secondary</button>
+
+        <!-- Indica una acción exitosa o positivo -->
+        <button type="button" class="btn btn-success">Success</button>
+
+        <!-- botón contextual de los mensajes de alerta informativos -->
+        <button type="button" class="btn btn-info">Info</button>
+
+        <!-- Indica que se debe tener cuidado con esta acción -->
+        <button type="button" class="btn btn-warning">Warning</button>
+
+        <!-- Indica una acción peligrosa o potencialmente negativo -->
+        <button type="button" class="btn btn-danger">Danger</button>
+
+        <!-- De hincapié en un botón, haciendo que se vea como un enlace mientras se mantiene el comportamiento del botón -->
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+      <br>
+      <br>
+
+      <hr>
+      <h1>Link,Button,Input,Submit,Reset</h1>
+      <hr>
+        <!-- Bootstrap incluye seis estilos de botones predefinidos, cada uno sirviendo a sus propios fines de semántica. -->
+        <!-- Proporciona peso visual adicional e identifica la acción principal de un conjunto de botones -->
+        <a class="btn btn-primary" href="#" role="button">Link</a>
+        <button class="btn btn-primary" type="submit">Button</button>
+        <input class="btn btn-primary" type="button" value="Input">
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="reset" value="Reset">
+
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12">
+
+    </div>
+
+  </div>
+</div>
+
+
+
+  </body>
+</html>
